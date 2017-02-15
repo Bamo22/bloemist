@@ -1,0 +1,28 @@
+<?php
+if(isLogin()){
+    ?>
+    <div class="panel panel-primary">
+    <div class="panel-heading">Mijn facturen</div>
+    <table class="table table-list-search">
+                    <thead>
+                        <tr>
+                            <th><i>factuurnummer</i></th>
+                            <th><i>factuurdatum</i></th>
+                            <th><i>totaalbedrag</i></th>
+                            <th><i>Bekijk en print factuur</i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                   <?php   getAllFacturen();  ?>
+                    </tbody>
+                </table>   
+        </div>
+</div>
+<?php
+}else{
+	echo "";
+}
+?>
+
+
+

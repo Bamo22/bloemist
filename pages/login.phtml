@@ -1,0 +1,24 @@
+ <div class="col-md-4"></div>
+ <div class="col-md-4">
+<?php if(!isLogin()){ ?>
+      <form class="form-signin" method="post">
+        <h2 class="form-signin-heading">Login pagina</h2>
+        <label for="gebruikersnaam" class="sr-only">gebruikersnaam</label>
+        <input type="text" id="gebruikersnaam" name="gebruikersnaam" class="form-control" placeholder="gebruikersnaam" required autofocus>
+        <label for="wachtwoord" class="sr-only">Password</label>
+        <input type="password" id="wachtwoord" name="wachtwoord" class="form-control" placeholder="wachtwoord" required>
+        <input type="hidden" name="login">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Onthoud mij
+          </label>
+        </div>
+        <div class="col-md-4">
+         <button class="btn btn-lg btn-primary btn-block" id="log-in" type="submit">Login</button>
+         </div>
+      </form>
+      <?php }else{
+          echo "<div class='alert alert-warning'>U bent al ingelogd!</div>";
+        } ?>
+
+    </div> <!-- /container -->
