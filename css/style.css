@@ -6997,3 +6997,7 @@ img.goodSize {
   max-width: 800px;
   max-height: 400px;
 }
+.bigger-brand {
+  font-size: 39px;
+  color: #000;
+}

@@ -1,5 +1,6 @@
 <?php
 /**
+* Deze klas zorgt voor het registeren van een klant, de klant kan doordat hij met een formulier zijn data verstuurd registeren. vervolgens wordt alle informatie hier verwerkt.
 * 
 */
 class registreer{
@@ -39,7 +40,7 @@ class registreer{
 		}
 
 	}
-
+	//Aan het einde word de alle gegevens in de database gezet.
 	public function addNewKlant(){
 
 		if(empty($this->tussenvoegsels)){

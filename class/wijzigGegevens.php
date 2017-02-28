@@ -1,6 +1,7 @@
 <?php
 /**
-* 
+* In deze klasse worden gegevens wijzigingen doorgevoerd. 
+* Tevens worden ook alle gegevens eerst opgehaald om voor de gebruiker inzichtelijk te maken.
 */
 class wijzigGegevens{
 	
@@ -9,7 +10,7 @@ class wijzigGegevens{
 	}
 
 	private function loadPersonalDetails(){
-		$db = new database();
-		$db->select();
+		// $db = new database();
+		// $db->select();
 	}
 }
