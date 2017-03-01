@@ -4,101 +4,13 @@
 <!-- Form Name -->
 <legend class="text-center">Wijzig mijn gegevens</legend>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="achternaam">Achternaam</label>  
-  <div class="col-md-4">
-  <input name="achternaam" type="text" placeholder="Voorbeeld: de Vries" class="form-control input-md" readonly="" ="" maxlength="20">
-  <input type="hidden" name="registreer">
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="voorletters">Voorletters</label>  
-  <div class="col-md-4">
-  <input name="voorletters" type="text" placeholder="A.B." class="form-control input-md" readonly="" maxlength="5">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="tussenvoegsels">Tussenvoegsels</label>  
-  <div class="col-md-4">
-  <input name="tussenvoegsels" type="text" class="form-control input-md" maxlength="5" readonly="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="roepnaam">Roepnaam</label>  
-  <div class="col-md-4">
-  <input name="roepnaam" type="text" placeholder="Jan" class="form-control input-md" maxlength="10" readonly="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="contact">Geboortedatum</label>  
-  <div class="col-md-4">
-  <input name="geboortedatum" type="date" class="form-control input-md" readonly="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="adres">Adres</label>  
-  <div class="col-md-4">
-  <input name="adres" type="text" class="form-control input-md" required="" maxlength="54">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="postcode">Postcode</label>  
-  <div class="col-md-4">
-  <input name="postcode" type="text" class="form-control input-md" required="" maxlength="6">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="woonplaats">Woonplaats</label>  
-  <div class="col-md-4">
-  <input name="woonplaats" type="text" placeholder="" class="form-control input-md" required="" maxlength="25">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="gebruikersnaam">Gebruikersnaam</label>  
-  <div class="col-md-4">
-  <input name="gebruikersnaam" type="text" class="form-control input-md" required="" maxlength="18">
-    
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="wachtwoord">Wachtwoord</label>
-  <div class="col-md-4">
-    <input name="wachtwoord" type="password" class="form-control input-md" required="" maxlength="25">
-    
-  </div>
-</div>
+  <?php getKlantGegevens(); ?>
 
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="signup"></label>
   <div class="col-md-4">
-    <button id="register" name="register" class="btn btn-success" type="submit">Update</button>
+    <button id="update" name="update" class="btn btn-success" type="submit">Update</button>
   </div>
 </div>
 

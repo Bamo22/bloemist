@@ -29,20 +29,23 @@
 					</div>
 				</div>
 				<div class="panel-footer">
+				<div class="row">
+							<div class="col-xs-3">Afhalen Bij
+								<select name="filiaal" class="selectpicker" required="">
+									<option value="">Kies Winkel</option>
+									<option value="Sneek">Sneek</option>
+									<option value="Heerenveen">Heerenveen</option>
+									<option value="Leeuwarden">Leeuwarden</option>
+									<option value="Dokkum">Dokkum</option>
+									<option value="Drachten">Drachten</option>
+								</select>
+							</div>
+						</div>
 					<div class="row text-center">
 						<div class="col-xs-9">
 							<h4 class="text-right">Totaal &euro; <?= getTotaalPrijs(); ?><strong></strong></h4>
 						</div>
-						<div class="col-xs-3">Afhalen Bij
-							<select name="filiaal" class="selectpicker" required="">
-								<option value="">Kies Winkel</option>
-								<option value="Sneek">Sneek</option>
-								<option value="Heerenveen">Heerenveen</option>
-								<option value="Leeuwarden">Leeuwarden</option>
-								<option value="Dokkum">Dokkum</option>
-								<option value="Drachten">Drachten</option>
-							</select>
-						</div>
+
 						<div class="col-xs-3">
 							<button name="bestel" type="submit" class="btn btn-success btn-block">
 								Bestel

@@ -65,11 +65,11 @@ function getAllFacturen(){
 		
 }
 //Deze functie is voor debuggen van de sessie waar alle artikelen in opgeslagen worden.
-function printArtikelenArray(){
-	if(isset($_SESSION['artikelen'])){
-		echo "<pre>";print_r($_SESSION['artikelen']);echo "</pre>";
-	}
-}
+// function printArtikelenArray(){
+// 	if(isset($_SESSION['artikelen'])){
+// 		echo "<pre>";print_r($_SESSION['artikelen']);echo "</pre>";
+// 	}
+// }
 //Deze functie word gebruikt om de lijst met artikelen te generen voor de winkelwagen.
 function getCartList(){
 	if(!isset($_SESSION['artikelen'])){echo "Geen producten in winkelwagen"; exit;}
@@ -82,16 +82,10 @@ function getCartList(){
 		//array_push($artikelInfo[0], "aantal"); 
 		$artikelInfo[$key]['aantal'] = $_SESSION['artikelen'][$value]['aantal'];
 	}
-	//print_r($artikelInfo[0]);
-	
-
-	//$winkelwegen = $_SESSION[artikelen][?]
-	
-	//var_dump($artikelInfo);
 
 	$cardItem = file_get_contents('html_blueprints/product_winkelwagen.phtml');
 
-	foreach ($artikelInfo as $key => $value) {	
+	foreach ($artikelInfo as $value) {	
 			echo $products[] = str_replace(["[[/artikel\]]", "[[/product_image\]]", "[[/prijs\]]", "[[/aantal\]]", "[[/artikelcode\]]"], [$value['artikel'], $value['product_image'], $value['prijs'], $value['aantal'], $value['artikelcode']], $cardItem);
 	}
 }
@@ -108,6 +102,11 @@ function getTotaalPrijs(){
 		$totaalPrijs += $artikelInfo[$key]['prijs']*$_SESSION['artikelen'][$value]['aantal'];
 	}
 	echo $totaalPrijs;
+}
+
+function getKlantGegevens(){
+	$klantGegevens = new wijzigGegevens();
+	$klantGegevens->loadGegevens();
 }
 
 

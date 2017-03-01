@@ -74,8 +74,14 @@ class database {
 	    return array_filter($result, function($value) { return $value !== ''; });
 	}
 	//Update
-	public function update(){
+	public function update($table, $column, $value, $where){
 		//UPDATE klant SET adres='leidijk 33' WHERE klantcode=?;
+
+		$sql = "UPDATE ".$table." SET ".$column."='".$value."' WHERE ".$where['this']."=".$where['that']."";
+
+	    $stmt = $this->connection->prepare($sql);
+
+	    $stmt->execute();
 	}
 	//Delete
 	public function delete(){

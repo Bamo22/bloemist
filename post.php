@@ -5,8 +5,11 @@ if ($_POST && isset($_POST)) {
 					if(isset($_POST['login'])){
 						$login = new login($_POST['gebruikersnaam'], $_POST['wachtwoord']);
 						if($login->successfullLogin() == true){
-							echo "<div class='alert alert-success'>Login geslaagd, ververs de pagina</div>";
-							//header("factures");
+							echo "<div class='alert alert-success'>Login geslaagd</div>
+							<script>setTimeout(function () {
+							   window.location.href= 'http://localhost/flowerpower';
+
+							},2000);</script>";
 						}else{
 							echo "<div class='alert alert-danger'>Foutief wachtwoord of gebruikersnaam</div>";
 						}
@@ -29,17 +32,48 @@ if ($_POST && isset($_POST)) {
 		}elseif(isLogin()) {
 			//bestellingen afronden.
 			if(isset($_POST['bestel'])){
-				//$artikel = new artikel();
-				echo "<pre>"; print_r($_POST); echo"</pre>";
-				// foreach ($variable as $key => $value) {
-				// 	$artikel->prepareArtikel();
-				// 	/////$_POST['artikelcode'], $_POST['aantal'], 
-				// }
-				// $artikel->prepareOrderInfo($_POST['filiaal']);
+				$artikel = new artikel();
+				//echo "<pre>"; print_r($_POST); echo"</pre>";
+				//foreach ($variable as $key => $value) {
+				$artikel->prepareArtikelen();
+					/////$_POST['artikelcode'], $_POST['aantal'], 
+				//}
+				$artikel->prepareOrderInfo($_POST['filiaal']);
 
-				// print_r($artikel->completeOrder());
-				//echo $_POST['filiaal'];
+				print_r($artikel->completeOrder());
 
+			}elseif (isset($_POST['update'])) {
+				$klantGegevens = new wijzigGegevens();
+				if (isset($_POST['adres']) && !empty($_POST['adres'])) {
+					$klantGegevens->updateGegevens("adres", $_POST['adres']);
+					echo "<div class='alert alert-success'>opgeslagen!</div>
+							<script>setTimeout(function () {
+							   window.location.href= 'http://localhost/flowerpower/wijzigmijngegevens';
+
+							},2000);</script>";
+				}elseif (isset($_POST['postcode']) && !empty($_POST['postcode'])) {
+					$klantGegevens->updateGegevens("postcode", $_POST['postcode']);
+					echo "<div class='alert alert-success'>opgeslagen!</div>
+							<script>setTimeout(function () {
+							   window.location.href= 'http://localhost/flowerpower/wijzigmijngegevens';
+
+							},2000);</script>";
+				}elseif (isset($_POST['woonplaats']) && !empty($_POST['woonplaats'])) {
+					$klantGegevens->updateGegevens("woonplaats", $_POST['woonplaats']);
+					echo "<div class='alert alert-success'>opgeslagen!</div>
+							<script>setTimeout(function () {
+							   window.location.href= 'http://localhost/flowerpower/wijzigmijngegevens';
+
+							},2000);</script>";
+				}elseif (isset($_POST['wachtwoord']) && !empty($_POST['wachtwoord'])) {
+					$klantGegevens->updateGegevens("wachtwoord", md5($_POST['wachtwoord']));
+					echo "<div class='alert alert-success'>opgeslagen!</div>
+							<script>setTimeout(function () {
+							   window.location.href= 'http://localhost/flowerpower/wijzigmijngegevens';
+
+							},2000);</script>";
+				}
+				
 			}
 
 
